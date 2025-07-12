@@ -29,10 +29,30 @@
                     <li><a href="acces">ACCESS</a></li>
                 </ul>
             </nav>
+
+            <!-- ハンバーガーメニュー -->
+            <div class="hamburger">
+                <span></span>
+            </div>
+
+            <nav class="header_nav-sp">
+                <ul>
+                    <li><a href="#aboutus">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#access">ACCESS</a></li>
+                </ul>
+            </nav>
         </div>
 
         <div class="mainvisual">
-            <img src="./images/pc_first-100.jpg" alt="カフェ店内の様子">
+            <picture>
+                <!-- スマホ版になった時のイメージ図を入れるコード。./以降＋.jpgはimg srcのように入ってくれないので自分で入れること -->
+                <source srcset="./images/sp_main_vs@2x-100.jpg"
+                media="(max-width: 768px)"> 
+                <img src="./images/pc_first-100.jpg" alt="カフェ店内の様子">
+            </picture>
         </div>
 
     </header>
@@ -48,7 +68,7 @@
         </div>
     </section>
         
-    <section class="aboutus_wrapper" id="about_us">
+    <section class="aboutus_wrapper" id="aboutus">
         
         <picture><img src="./images/課題用書き出し/1x/coffee_image.png"></picture>
 
@@ -142,7 +162,7 @@
 
     <footer id="footer">
         <div class="footer_container" id="footer">
-            <h3><img src="./images/design_cafe_logo_footer@2x.png" alt="footer-logo"></h3>
+            <h3 class="logo"><img src="./images/design_cafe_logo_footer@2x.png" alt="footer-logo"></h3>
             <div>
                 <p class="footer-text">
                     OPEN 18:00 / CLOSE 24:00
@@ -161,5 +181,16 @@
         <img src="./images/to_top@2x.png">
     </a>
     </div>
+
+    <!-- 必ずscriptタグの上にjQueryのURLを書くこと -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".hamburger").click(function(){
+                $(".hamburger").toggleClass("open");
+                $(".header_nav-sp").fadeToggle();
+            });
+        });
+    </script>
 </body>
 </html>

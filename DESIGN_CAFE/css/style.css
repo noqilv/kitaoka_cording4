@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html{
+    scroll-behavior: smooth;
+}
+
 .header_container{
     display: flex;
     justify-content: space-between;
@@ -24,17 +28,128 @@
       "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
 }
 
+/* PCの時は表示しないとき */
+.hamburger,
+.header_nav-sp{
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .hamburger{
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 10px; /*上から10pxの位置に配置*/
+        right: 10px; /*右から10pxの位置に配置*/
+        cursor: pointer; /*ハンバーガーメニューの上にカーソルを乗せると押せるようになる*/
+        z-index: 9999; /*9999はz-indexの最大値、最上部に表示させたいときに使用。初期設定はz-index: 1;*/
+    }
+
+    .hamburger span{
+        position: absolute;
+        width: 100%; /*親要素＝.humburerのwidthに対して100％のwidthを取る*/
+        height: 3px;
+        background-color: #fff;
+        top: 14px;
+        right: 0;
+        transition: 0.3s;
+    }
+
+    .hamburger span::before{
+        content: ""; /**/
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        top: -14px; /*.hamburger spanを基準として14px上に出てくる*/
+        right: 0;
+        transition: 0.3s;
+    }
+
+    .hamburger span::after{
+        content: "";
+        position: absolute;
+        width: 100%; 
+        height: 3px;
+        background-color: #fff;
+        bottom: -14px; /*.hamburger spanを基準として14px下に出てくる*/
+        right: 0;
+        transition: 0.3s;
+    }
+
+    .header_nav-sp{
+        position: absolute;
+        height: 100vh; /*画面いっぱいいっぱい＝画面全体的に黒背景を出したいため*/
+        width: 100%;
+        background-color: #000000aa;
+        top: 0;
+        left: 0;
+    }
+
+    .header_nav-sp a{
+        color: #fff;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
+      "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    }
+
+    .header_nav-sp ul{
+        display: flex; /*justify-content、align-itemsを使いたいためにあえてdisplay:flex;を使用する*/
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .header_nav{
+        display: none;
+    }
+
+    .open span{
+        background-color: transparent; /*真ん中をを透明にする？*/
+    }
+
+    .open span::before{
+        transform: rotate(45deg); /*45度動く*/
+        top: 0; /*top－14pxがついていたのを正位置に戻す*/
+    }
+
+    .open span::after{
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+}
+
+.text_wrapper p{
+    text-align: center;
+}
+
 .logo{
     width: 226px;
 }
 
-p{
-    text-align: center;
-    width: 100%;
-}
-
 body{
     background-color: antiquewhite;
+}
+
+h2{
+    height: 77px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h2 img{
+    height: 100%;
+    width: auto;
+}
+
+.aboutus_wrapper h2{
+    text-align: left;
+}
+
+.gallery_wrapper h2{
+    margin-bottom: 30px;
 }
 
 .text_wrapper .lead .first_text{
@@ -61,16 +176,27 @@ body{
     align-items: center;
 }
 
-.aboutus_wrapper aboutus-logo{
+.aboutus_wrapper picture{
     width: 50%;
 }
 
-.aboutus_wrapper paragraph-1{
-    font-size: 50px;
-    margin-bottom: 50px;
+.aboutus_wrapper .about_text{
+    width: 50%;
+    padding-left: 85px;
 }
 
-.aboutus_wrapper paragraph-2{
+.aboutus_wrapper .aboutus-logo{
+    width: 50%;
+}
+
+.aboutus_wrapper .paragraph-1{
+    font-size: 50px;
+    margin-bottom: 50px;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.aboutus_wrapper .paragraph-2{
     text-align: justify;
     text-justify: inter-ideograph;
 }
@@ -81,7 +207,7 @@ body{
     margin: 0 auto;
 }
 
-.menu_wrapper menu-logo{
+.menu_wrapper .menu-logo{
     align-items: center;
     margin-bottom: 50px;
 }
@@ -110,7 +236,6 @@ div{
 }
 
 #gallery{
-    max-width: 1000px;
     padding-top: 100px;
     margin: 0 auto;
 }
@@ -119,14 +244,18 @@ div{
     text-align: center;
 }
 
-.gallery_wrapper gallery-logo{
+.gallery_wrapper .gallery-logo{
     padding-bottom: 20px;
 }
 
 .gallery_container{
     display: flex;
-    align-items: center;
     justify-content: space-between
+}
+
+.gallery_container img{
+    width: 20%;
+    margin-bottom: 70px;
 }
 
 #event{
@@ -138,9 +267,10 @@ div{
 .box{
     max-width: 1000px;
     background-color: #fff;
-    border: 3px solid brown;
+    border: 3px solid rgb(76, 40, 31);
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 70px;
 }
 
 .event_containers{
@@ -148,8 +278,12 @@ div{
 }
 
 .event_container{
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.event_container a{
     display: flex;
-    margin-left: 150px;
     gap: 20px;
     margin-bottom: 20px;
 }
@@ -160,7 +294,13 @@ div{
     text-align: left;
 }
 
+.event_container .content{
+    border-bottom: 1px solid #4f260b;
+}
 
+.access_wrapper .access-logo{
+    margin-bottom: 45px;
+}
 
 .access_wrapper iframe{
     width: 100%;
@@ -173,4 +313,21 @@ div{
     bottom: 20px;
     right: 20px;
     width: 125px;
+}
+
+.footer_container{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 65px;
+    padding: 80px 0;
+}
+
+.footer_container p{
+    text-align: left;
+    line-height: 25px;
+}
+
+#footer{
+    background-color: #fff;
 }
