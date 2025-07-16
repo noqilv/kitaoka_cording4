@@ -372,6 +372,7 @@ div{
 
     .aboutus_wrapper .about_text .paragraph-1{
         font-size: 56px;
+        text-align: left; /*左詰めにしたいけどできない*/
     }
 
     .aboutus_wrapper .about_text .paragraph-2{
@@ -411,11 +412,11 @@ div{
 
     .gallery_wrraper .gallery_container img{
         width: 100%;
-    }   /*spに切り替わると画像を差し替えたいが分からない*/
+    }   /*spに切り替わると画像を差し替えたいが分からない、たぶんjQueryを使ってハンバーガーメニューみたいに作る？*/
 
     .event_info .event_containers li{
        display: block;
-    }
+    } /*縦組み？にしたいけどできない、文章の後半・・・を出す調べ方もわからない*/
 
     #footer{
         flex-direction: column;
