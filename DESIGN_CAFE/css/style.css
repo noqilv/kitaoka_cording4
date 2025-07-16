@@ -119,6 +119,7 @@ html{
         transform: rotate(-45deg);
         bottom: 0;
     }
+
 }
 
 .text_wrapper p{
@@ -164,6 +165,10 @@ h2 img{
     line-height: 96px;
 }
 
+.text_wrapper .lead .third_text{
+    margin-bottom: 100px;
+}
+
 #about_us{
     max-width: 1000px;
     padding-top: 100px;
@@ -171,9 +176,12 @@ h2 img{
 }
 
 .aboutus_wrapper{
+    max-width: 1000px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 10px;
 }
 
 .aboutus_wrapper picture{
@@ -190,7 +198,7 @@ h2 img{
 }
 
 .aboutus_wrapper .paragraph-1{
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 50px;
     text-align: left;
     margin-top: 50px;
@@ -205,6 +213,7 @@ h2 img{
     max-width: 1000px;
     padding-top: 100px;
     margin: 0 auto;
+    padding: 100px 10px 0;
 }
 
 .menu_wrapper .menu-logo{
@@ -255,13 +264,13 @@ div{
 
 .gallery_container img{
     width: 20%;
-    margin-bottom: 70px;
 }
 
 #event{
     max-width: 1000px;
     padding-top: 100px;
     margin: 0 auto;
+    padding: 100px 10px 0;
 }
 
 .box{
@@ -330,4 +339,102 @@ div{
 
 #footer{
     background-color: #fff;
+}
+
+@media screen and (max-width: 1100px) {
+    .text_wrapper .lead .first_text {
+        font-size: 20px;
+    }
+
+    .text_wrapper .lead .second_text {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .text_wrapper .lead .first_text{
+        font-size: 28px;
+    }
+
+    .text_wrapper .lead .second_text{
+        font-size: 72px;
+    }
+
+    .text_wrapper .lead .third_text{
+        font-size: 24px;
+        letter-spacing: 3px;
+        line-height: 48px;
+    }
+    .aboutus_wrapper picture{
+        width: 100%;
+        order: 1;
+    }
+
+    .aboutus_wrapper .about_text .paragraph-1{
+        font-size: 56px;
+    }
+
+    .aboutus_wrapper .about_text .paragraph-2{
+        font-size: 28px;
+    }
+
+    #aboutus{
+        flex-direction: column;
+    }
+
+    .about_text{
+        display: contents;
+    }
+
+    .about_text p{
+        order: 1;
+    }
+
+    .menu_wrapper .menu_container{
+        flex-direction: column;
+        padding: 0 30px;
+    }
+
+    .menu_wrapper .menu_container .menu_box img{
+        display: block;
+        max-width: 100%;
+    }
+
+    .menu_container .menu_box h3{
+        font-size: 48px;
+    }
+
+    .menu_container .menu_box p{
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .gallery_wrraper .gallery_container img{
+        width: 100%;
+    }   /*spに切り替わると画像を差し替えたいが分からない*/
+
+    .event_info .event_containers li{
+       display: block;
+    }
+
+    #footer{
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .footer_container .logo{
+        padding-top: 50px;
+        width: 70%;
+    }
+
+    .footer_container .footer-text{
+        font-size: 30px;
+        line-height: 48px;
+    }
+
+    .end-text{
+        margin-top: 50px;
+        text-align: center;
+        font-size: 24px;
+    }
 }

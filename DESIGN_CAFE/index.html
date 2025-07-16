@@ -22,11 +22,11 @@
 
             <nav class="header_nav">
                 <ul>
-                    <li><a href="aboutus">ABOUT US</a></li>
-                    <li><a href="menu">MENU</a></li>
-                    <li><a href="gallery">GALLERY</a></li>
-                    <li><a href="event">EVENT</a></li>
-                    <li><a href="acces">ACCESS</a></li>
+                    <li><a href="#aboutus">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#acces">ACCESS</a></li>
                 </ul>
             </nav>
 
@@ -63,14 +63,18 @@
             <p class="first_text">Have a happy day From a cup of coffee.</p>
             <p class="second_text">ハッピーに溢れる1日を
                 <br>1杯のコーヒーから。</p>
-            <p class="third_text">毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ
-                <br>足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</p>
+            <p class="third_text">毎日を丁寧に大切に過ごしたい。<br class="br_sp">だからこそ一杯一杯丁寧にコーヒーを入れ
+                <br>足を運んでくれるお客さんには落ち着く空間と<br class="br_sp">こだわりのコーヒーを提供したい。</p>
         </div>
     </section>
         
     <section class="aboutus_wrapper" id="aboutus">
         
-        <picture><img src="./images/課題用書き出し/1x/coffee_image.png"></picture>
+        <picture>
+            <source srcset="./images/about_us@2x-100.jpg"
+            media="(max-width: 768px)"> 
+            <img src="./images/課題用書き出し/1x/coffee_image.png">
+        </picture>
 
         <div class="about_text">
             <h2><img src="./images/about_us@2x.png" alt="aboutus-logo"></h2>
@@ -116,6 +120,8 @@
         <div class="gallery_container">
             <img src="./images/pc_gallary_05-100.jpg">
             <img src="./images/pc_gallary_04-100.jpg">
+            <source srcset="./images/mobile_gallery-100.jpg"
+                media="(max-width: 768px)"> 
             <img src="./images/pc_gallary_03-100.jpg">
             <img src="./images/pc_gallary_02-100.jpg">
             <img src="./images/pc_gallary_01-100.jpg">
@@ -173,7 +179,7 @@
             </div>
         </div>
 
-        <div><p class="end">© 2021 DESIGN CAFE</p></div>
+        <div><p class="end-text">© 2021 DESIGN CAFE</p></div>
     </footer>
 
     <div class="toTop">
@@ -191,6 +197,11 @@
                 $(".header_nav-sp").fadeToggle();
             });
         });
+        
+    </script>
+
+    <script>
+        
     </script>
 </body>
 </html>
