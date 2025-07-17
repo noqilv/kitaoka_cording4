@@ -118,10 +118,12 @@
             <h2><img src="./images/gallery@2x.png" alt="gallery-logo"></h2>
         </div>
         <div class="gallery_container">
-            <img src="./images/pc_gallary_05-100.jpg">
+            <picture class="images">
+                <source srcset="./images/mobile_gallery-100.jpg"
+                media="(max-width: 768px)"/> 
+                <img src="./images/pc_gallary_05-100.jpg">
+            </picture>
             <img src="./images/pc_gallary_04-100.jpg">
-            <source srcset="./images/mobile_gallery-100.jpg"
-                media="(max-width: 768px)"> 
             <img src="./images/pc_gallary_03-100.jpg">
             <img src="./images/pc_gallary_02-100.jpg">
             <img src="./images/pc_gallary_01-100.jpg">

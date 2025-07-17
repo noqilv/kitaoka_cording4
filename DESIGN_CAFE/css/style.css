@@ -167,7 +167,13 @@ h2 img{
 
 .text_wrapper .lead .third_text{
     margin-bottom: 100px;
+    font-size: 23px;
+    line-height: 1.6;
 }
+
+.br_sp{
+    display: none;
+} /*PC版では改行しなくていいのでdisplay: none;をつけておく*/
 
 #about_us{
     max-width: 1000px;
@@ -207,6 +213,8 @@ h2 img{
 .aboutus_wrapper .paragraph-2{
     text-align: justify;
     text-justify: inter-ideograph;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 #menu{
@@ -232,16 +240,18 @@ div{
 }
 
 .menu_container h3{
-    font-size: 30px;
+    font-size: 38px;
     color: firebrick;
     padding-left: 10px;
-    margin-top: -20px;
+    margin-top: -10px;
     margin-bottom: 10px;
 }
 
 .menu_container p{
     text-align: justify;
     text-justify: inter-ideograph;
+    font-size: 17px;
+    line-height: 1.5;
 }
 
 #gallery{
@@ -353,34 +363,62 @@ div{
 
 @media screen and (max-width: 768px) {
     .text_wrapper .lead .first_text{
-        font-size: 28px;
+        font-size: 17px;
+        margin-bottom: 25px;
     }
 
     .text_wrapper .lead .second_text{
-        font-size: 72px;
+        font-size: 38px;
+        line-height: 1.2;
+        margin-bottom: 25px;
     }
 
     .text_wrapper .lead .third_text{
-        font-size: 24px;
+        font-size: 16px;
         letter-spacing: 3px;
-        line-height: 48px;
+        line-height: 1.9;
+        margin-bottom: 65px;
     }
+
+    .br_sp{
+        display: block;
+    } /*PC版でnoneにしているので、ここでblockにしてあげる*/
+
+    h2{
+        height: 47px;
+    }
+
+    .aboutus-logo{
+        margin-bottom: 18px;
+    }
+
     .aboutus_wrapper picture{
         width: 100%;
         order: 1;
+        margin-bottom: 34px;
+    }
+
+    .aboutus_wrapper h2{
+        margin: 0 auto;
+        margin-bottom: 18px;
     }
 
     .aboutus_wrapper .about_text .paragraph-1{
-        font-size: 56px;
+        font-size: 36px;
         text-align: left; /*左詰めにしたいけどできない*/
+        line-height: 1.8;
+        margin-bottom: 30px;
     }
 
     .aboutus_wrapper .about_text .paragraph-2{
-        font-size: 28px;
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 57px;
     }
 
     #aboutus{
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .about_text{
@@ -396,27 +434,61 @@ div{
         padding: 0 30px;
     }
 
+    .menu-logo{
+        margin-bottom: 22px;
+    }
+
     .menu_wrapper .menu_container .menu_box img{
         display: block;
         max-width: 100%;
     }
 
     .menu_container .menu_box h3{
-        font-size: 48px;
+        font-size: 40px;
     }
 
     .menu_container .menu_box p{
-        font-size: 28px;
-        letter-spacing: 3px;
+        font-size: 17px;
+        line-height: 1.6;
+        margin-bottom: 58px;
     }
 
-    .gallery_wrraper .gallery_container img{
-        width: 100%;
-    }   /*spに切り替わると画像を差し替えたいが分からない、たぶんjQueryを使ってハンバーガーメニューみたいに作る？*/
+    .gallery-logo{
+        margin-top: 94px;
+        margin-bottom: 20px;
+    }
 
-    .event_info .event_containers li{
-       display: block;
-    } /*縦組み？にしたいけどできない、文章の後半・・・を出す調べ方もわからない*/
+    .gallery_container{
+        display: none;
+    }
+
+    .images{
+        display: block;
+        width: 100%;
+        margin-bottom: 34px;
+    }
+
+    .event-logo{
+        margin-bottom: 20px;
+    }
+
+    .event_info .event_containers a{
+        display: block;
+        font-size: 16px;
+    }
+    
+    .event_containers{
+        padding: 0 27px;
+    }
+    .event_container .content{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    } /*・・・を出す方法*/
+
+    .access-logo{
+        margin-bottom: 10px;
+    }
 
     #footer{
         flex-direction: column;
@@ -425,17 +497,17 @@ div{
 
     .footer_container .logo{
         padding-top: 50px;
-        width: 70%;
+        width: 227px;
     }
 
-    .footer_container .footer-text{
-        font-size: 30px;
-        line-height: 48px;
+    .footer-text{
+        font-size: 16px;
+        line-height: 3.8px;
     }
 
     .end-text{
-        margin-top: 50px;
+        margin-top: 45px;
         text-align: center;
-        font-size: 24px;
+        font-size: 16px;
     }
 }
