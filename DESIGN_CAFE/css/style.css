@@ -219,7 +219,6 @@ h2 img{
 
 #menu{
     max-width: 1000px;
-    padding-top: 100px;
     margin: 0 auto;
     padding: 100px 10px 0;
 }
@@ -272,7 +271,8 @@ div{
     justify-content: space-between
 }
 
-.gallery_container img{
+ .gallery_container .img-pc,
+ .gallery_container .images{
     width: 20%;
 }
 
@@ -432,6 +432,11 @@ div{
     .menu_wrapper .menu_container{
         flex-direction: column;
         padding: 0 30px;
+        gap: 0;
+    }
+
+    #menu{
+        padding-top: 0;
     }
 
     .menu-logo{
@@ -453,19 +458,31 @@ div{
         margin-bottom: 58px;
     }
 
+    #gallery{
+    padding-top: 0;
+    }
+
     .gallery-logo{
         margin-top: 94px;
         margin-bottom: 20px;
     }
 
-    .gallery_container{
+    .gallery_container .img-pc{
         display: none;
+    }
+
+    .gallery_container .images{
+        width: 100%;
     }
 
     .images{
         display: block;
         width: 100%;
         margin-bottom: 34px;
+    }
+
+    #event{
+        padding-top: 0;
     }
 
     .event-logo{
