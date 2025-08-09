@@ -13,6 +13,7 @@ html{
     padding-right: 7.6%;
     position: absolute;
     width: 100%;
+    z-index: 9999; /*最前面にする*/
 }
 
 .header_nav ul{
@@ -473,6 +474,7 @@ div{
 
     .gallery_container .images{
         width: 100%;
+        height: auto;
     }
 
     .images{
@@ -527,4 +529,18 @@ div{
         text-align: center;
         font-size: 16px;
     }
+}
+
+/*slickの大元はいじらなくてOK、cssで上書きするイメージ*/
+.slick-dots{
+    bottom: 0;
+}
+
+/*検証ツールでポチポチしながらやると👍*/
+.slick-dots li button:before{
+    color:#fff;
+}
+
+.slick-dots li.slick-active button:before{
+    color:#fff;
 }
